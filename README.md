@@ -10,7 +10,7 @@ sudo docker-compose exec web bash
 Then, start the consumer:
 
 ```bash
-huey_consumer -w 4
+huey_consumer tasks.huey -w 4
 ```
 
 And then, separately get yourself a python REPL (might need another `docker-compose exec web bash`):
