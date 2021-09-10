@@ -19,9 +19,9 @@ And then, separately get yourself a python REPL (might need another `docker-comp
 from tasks import count_beans
 
 count_beans(2) # works fine
-count_beans(range(3)) # works fine
+count_beans.map(range(3)) # works fine
 
-count_beans(range(4)) # deadlocks!!
+count_beans.map(range(4)) # deadlocks!!
 ```
 
 To recover from these situations I've restarted the consumer, and ocassionally had to go into `redis-cli` and `DEL huey.redis.app` and then restart the consumer.
